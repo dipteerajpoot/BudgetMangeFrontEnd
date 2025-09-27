@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 // Create axios instance
 const api = axios.create({
@@ -38,29 +38,29 @@ api.interceptors.response.use(
 
 // Auth Service
 export const authService = {
-  login: (email, password) => api.post('/user/login', { email, password }).then(res => res.data),
-  signup: (name, email, password) => api.post('/user/signup', { name, email, password }).then(res => res.data),
-  getProfile: () => api.get('/user/profile').then(res => res.data),
-  verifyAccount: (email) => api.post('/user/verify', { email }).then(res => res.data),
+  login: (email, password) => api.post('/api/users/login', { email, password }).then(res => res.data),
+  signup: (name, email, password) => api.post('/api/users/signup', { name, email, password }).then(res => res.data),
+  getProfile: () => api.get('/api/users/profile').then(res => res.data),
+  verifyAccount: (email) => api.post('/api/users/verify', { email }).then(res => res.data),
 };
 
 // Budget Service
 export const budgetService = {
-  createBudget: (budgetData) => api.post('/budget', budgetData).then(res => res.data),
-  getBudgets: () => api.get('/budget').then(res => res.data),
-  getBudgetById: (id) => api.get(`/budget/${id}`).then(res => res.data),
-  updateBudget: (id, budgetData) => api.put(`/budget/${id}`, budgetData).then(res => res.data),
-  deleteBudget: (id) => api.delete(`/budget/${id}`).then(res => res.data),
-  getBudgetWithPrediction: (id) => api.get(`/budget/${id}/prediction`).then(res => res.data),
+  createBudget: (budgetData) => api.post('/api/budgets', budgetData).then(res => res.data),
+  getBudgets: () => api.get('/api/budgets').then(res => res.data),
+  getBudgetById: (id) => api.get(`/api/budgets/${id}`).then(res => res.data),
+  updateBudget: (id, budgetData) => api.put(`/api/budgets/${id}`, budgetData).then(res => res.data),
+  deleteBudget: (id) => api.delete(`/api/budgets/${id}`).then(res => res.data),
+  getBudgetWithPrediction: (id) => api.get(`/api/budgets/${id}/prediction`).then(res => res.data),
 };
 
 // Expense Service
 export const expenseService = {
-  addExpense: (expenseData) => api.post('/expense', expenseData).then(res => res.data),
-  getExpensesByBudget: (budgetId) => api.get(`/expense/budget/${budgetId}`).then(res => res.data),
-  getAllExpenses: () => api.get('/expense').then(res => res.data),
-  updateExpense: (id, expenseData) => api.put(`/expense/${id}`, expenseData).then(res => res.data),
-  deleteExpense: (id) => api.delete(`/expense/${id}`).then(res => res.data),
+  addExpense: (expenseData) => api.post('/api/expenses', expenseData).then(res => res.data),
+  getExpensesByBudget: (budgetId) => api.get(`/api/expenses/budget/${budgetId}`).then(res => res.data),
+  getAllExpenses: () => api.get('/api/expenses').then(res => res.data),
+  updateExpense: (id, expenseData) => api.put(`/api/expenses/${id}`, expenseData).then(res => res.data),
+  deleteExpense: (id) => api.delete(`/api/expenses/${id}`).then(res => res.data),
 };
 
 export default api;
