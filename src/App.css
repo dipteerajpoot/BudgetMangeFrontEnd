@@ -1,0 +1,194 @@
+/* Global Styles for Finance Management App */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button hover effects */
+.MuiButton-root {
+  transition: all 0.3s ease;
+}
+
+.MuiButton-root:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card hover effects */
+.MuiCard-root {
+  transition: all 0.3s ease;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Table styles */
+.MuiTableContainer-root {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.MuiTableHead-root {
+  background-color: #f8f9fa;
+}
+
+.MuiTableRow-root:hover {
+  background-color: #f5f5f5;
+}
+
+/* Dialog styles */
+.MuiDialog-paper {
+  border-radius: 12px;
+}
+
+/* Form styles */
+.MuiTextField-root {
+  margin-bottom: 16px;
+}
+
+/* Alert styles */
+.MuiAlert-root {
+  border-radius: 8px;
+}
+
+/* Loading spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .MuiCard-root {
+    margin-bottom: 16px;
+  }
+  
+  .MuiTableContainer-root {
+    overflow-x: auto;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Status indicators */
+.status-verified {
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.status-unverified {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+/* Financial indicators */
+.positive-amount {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.negative-amount {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Chart container */
+.chart-container {
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard grid */
+.dashboard-grid {
+  margin-top: 24px;
+}
+
+/* Navigation active state */
+.nav-active {
+  background-color: #1976d2 !important;
+  color: white !important;
+}
+
+.nav-active .MuiListItemIcon-root {
+  color: white !important;
+}
+
+/* Custom chip styles */
+.MuiChip-root {
+  font-weight: 500;
+}
+
+/* Expense category colors */
+.category-food { background-color: #ff9800; color: white; }
+.category-transportation { background-color: #2196f3; color: white; }
+.category-shopping { background-color: #e91e63; color: white; }
+.category-entertainment { background-color: #9c27b0; color: white; }
+.category-bills { background-color: #f44336; color: white; }
+.category-healthcare { background-color: #4caf50; color: white; }
+.category-education { background-color: #3f51b5; color: white; }
+.category-travel { background-color: #00bcd4; color: white; }
+.category-groceries { background-color: #8bc34a; color: white; }
+.category-gas { background-color: #ff5722; color: white; }
+.category-insurance { background-color: #607d8b; color: white; }
+.category-other { background-color: #795548; color: white; }
